@@ -25,19 +25,19 @@ Each position on the board could be represented by a (row, column) pair.  For ex
 
 **Gameplay**
 * Create an Othello game:
-        game = Othello()
+*         game = Othello()
 * Create two players:
-        game.create_player("Helen", "white")
-        game.create_player("Leo", "black")
-* Move your piece to a valid location:
-        game.play_game("black", (5,6))
+*         game.create_player("Leo", "white")
+*         game.create_player("Helen", "black")
+* Move a player's piece to a valid location:
+*         game.play_game("black", (5,6))
 * Invalid moves will be caught, but moving out of turn won't!
 * View the updated board layout:
-        game.print_board()
+*         game.print_board()
 * If unsure of moves, ask for help:
-        game.return_available_positions("white")
+*         game.return_available_positions("white")
 * Have the opponent move their piece:
-        game.play_game("white", (7,6))
+*         game.play_game("white", (7,6))
 
 **Player:**
 The Player class represents a player in the game. It contains the following information:
