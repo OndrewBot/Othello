@@ -1,6 +1,6 @@
 # OTHELLO
 
-For this project you will write a class called Othello that allows two people to play text-based Othello (https://en.wikipedia.org/wiki/Reversi).  The Othello game is a strategy board game. In this game, two players take turns placing their colored pieces on an 8x8 board. The objective is to capture the opponent's pieces and have the majority of your own pieces on the board at the end of the game
+This project uses a class, Othello, to allow two people to play text-based Othello (Reversi).  The Othello game is a strategy board game, where two players take turns placing their colored pieces on an 8x8 board. The objective is to capture the opponent's pieces and have the majority of your own pieces on the board at the end of the game.
 
 **Rules:**
 
@@ -14,8 +14,6 @@ For this project you will write a class called Othello that allows two people to
 * The game ends when neither player can move, and the player with the most pieces on the board wins. A tie occurs if both players have the same number of pieces.
 * The only cheating that's allowed is for a player to move out of turn - watch out!
 
-For a better understanding of the rules, you can play the game at this site: https://www.eothello.com/
-
 **Game Board:**
 The game board is represented by a 10x10 grid as figure 1 shown below.
 * Edge: * (star)
@@ -23,9 +21,23 @@ The game board is represented by a 10x10 grid as figure 1 shown below.
 * White piece: O
 * Empty space: .  (dot)
 
-
 Each position on the board could be represented by a (row, column) pair.  For example, at the beginning, white pieces are at position (4,4) and (5,5) and black pieces are at (4,5) and (5,4).
 
+**Gameplay**
+* Create an Othello game:
+        game = Othello()
+* Create two players:
+        game.create_player("Helen", "white")
+        game.create_player("Leo", "black")
+* Move your piece to a valid location:
+        game.play_game("black", (5,6))
+* Invalid moves will be caught, but moving out of turn won't!
+* View the updated board layout:
+        game.print_board()
+* If unsure of moves, ask for help:
+        game.return_available_positions("white")
+* Have the opponent move their piece:
+        game.play_game("white", (7,6))
 
 **Player:**
 The Player class represents a player in the game. It contains the following information:
@@ -33,7 +45,7 @@ The Player class represents a player in the game. It contains the following info
 * Piece color (string): Either "black" or "white"
 
 **Othello:**
-The Othello object represents the game as played.  It contains information about the players and the board. Name the board as "board", so we could access each position value on the board by **self._board[row][column]**. It must include those methods (but may have more):
+The Othello object represents the game as played.  It contains information about the players and the board.
 
 * print_board(self): print out the current board, including the boundaries 
 * create_player(self, player_name, color): creates a player object with the given name and color ("black" or "white") and adds it to the player list
